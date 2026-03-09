@@ -32,6 +32,8 @@ app.get('/webhook', (req, res) => {
 // Aquí es donde WhatsApp envía los mensajes de los usuarios
 app.post('/webhook', (req, res) => {
     const body = req.body;
+    // ESTO IMPRIMIRÁ CUALQUER COSA QUE LLEGUE, SEA LO QUE SEA
+    console.log("🔔 WEBHOOK ACTIVADO:", JSON.stringify(req.body, null, 2));
 
     // Verificar que el evento provenga de una cuenta de WhatsApp Business
     if (body.object === 'whatsapp_business_account') {
